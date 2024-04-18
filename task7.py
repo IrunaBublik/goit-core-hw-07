@@ -240,6 +240,25 @@ def main():
         elif command == "all":
             print(show_all(book))
 
-        elif command == "add-birthday":
+         elif command == "add-birthday":
+            print(add_birthday(args, book))
+
+        elif command == "show-birthday":
+            print(show_birthday(args, book))
+
+        elif command == "birthdays":
+            birthdays = book.get_upcoming_birthdays()
+            if not len(birthdays):
+                print("There are no upcoming birthdays.")
+                continue
+            for day in birthdays:
+                print(f"{day}")
+
+        else:
+            print("Invalid command.")
+
+
+if __name__ == "__main__":
+    main()
 
 
